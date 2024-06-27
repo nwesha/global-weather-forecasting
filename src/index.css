@@ -1,0 +1,319 @@
+/* Global styles */
+body {
+  font-family: 'Arial', sans-serif;
+  background: url('./images/background.png') no-repeat center center fixed;
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+/* Heading styles */
+h1 {
+  color: #1f3451;
+  text-shadow: 0 0 7px #4b93b7, 0 0 20px #448cb5db, 0 0 40px #3894a4;
+  font-family: "Pacifico", cursive;
+  font-weight: 400;
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 5px;
+  font-size: 4vw;
+  max-width: 100%;
+  word-wrap: break-word;
+}
+
+h3 {
+  color: #ffdb81;
+  text-align: center;
+  margin-top: 0;
+  font-family: "LXGW WenKai Mono TC", monospace;
+  font-weight: 400;
+  font-size: 1vw;
+  max-width: 100%;
+  word-wrap: break-word;
+}
+
+/* Form container styles */
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 90%;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.para {
+  background: rgba(255, 255, 255, 0.19);
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  padding: 15px;
+  width: 100%;
+}
+
+/* Custom form styles */
+.custom-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.custom-form label {
+  margin-bottom: 10px;
+  margin-right: 0;
+  font-size: 1.2em;
+  color: #023661;
+  font-family: "Luckiest Guy", cursive;
+}
+
+/* Form group styles */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+/* Search box styles */
+.search-box {
+  width: 80%;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+/* Form control (input) styles */
+.form-control {
+  flex: 1;
+  padding: 10px;
+  background-color: #ffffffc6;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1em;
+  width: 100%;
+}
+
+.form-control:focus {
+  border-color: #023661;
+  outline: none;
+}
+
+/* Button styles */
+.btn {
+  margin-top: 30px;
+  border: none;
+  outline: none;
+  color: #1f3451;
+  cursor: pointer;
+  font-size: 2.5em;
+  background-color: transparent;
+}
+
+.btn:hover {
+  color: rgb(222, 178, 6);
+}
+
+/* FetchWeather styles */
+.weather-container {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.box{
+  margin: 10px 10px 10px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  transition: background 1s ease-in-out;
+  width: 100%;
+  max-width: 500px;
+}
+
+/* Day styles */
+.box.day {
+  background: linear-gradient(to top, #87ceeb, #f0f8ff);
+  color: #000;
+}
+
+.box.day .location {
+  color: #1e90ff;
+}
+
+.box.day .weather-img {
+  animation: sunAnimation 3s infinite;
+}
+
+/* Night styles */
+.box.night {
+  background: linear-gradient(to top, #2c3e50, #1c1c1c);
+  color: #fff;
+}
+
+.box.night .location {
+  color: #f39c12;
+}
+
+.box.night .weather-img {
+  animation: moonAnimation 3s infinite;
+}
+
+/* Sun and Moon */
+.sun, .moon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin: 0 auto 20px;
+}
+
+.sun {
+  background: radial-gradient(circle, #f8d443, #efcc6d, #ffffff);
+}
+
+.moon {
+  background: radial-gradient(circle at 30% 30%, #d1d0d0, #8d8d89, #1c1c1c);
+  overflow: hidden;
+  border: rgb(30, 30, 30);
+}
+
+.moon::before {
+  content: '';
+  position: absolute;
+  width: 50px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgb(30, 30, 30);
+  right: -20px;
+  top: 0;
+}
+
+/* Location styles */
+.location {
+  font-size: 1.5em;
+  margin: 20px 0 10px;
+}
+
+/* Details styles */
+.details {
+  margin-top: 20px;
+  font-family: "Kalam", cursive;
+}
+
+/* Temperature styles */
+.temperature-value {
+  font-size: 2em;
+  margin: 0;
+}
+
+/* Weather image styles */
+.weather-img {
+  width: 120px;
+  height: 80px;
+  margin: 20px 0;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes sunAnimation {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+@keyframes moonAnimation {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.day .weather-img {
+  animation-name: sunAnimation;
+}
+
+.night .weather-img {
+  animation-name: moonAnimation;
+}
+
+/* Weather text styles */
+.weather-text {
+  font-size: 1.2em;
+  margin: 0;
+}
+
+.deg {
+  font-size: 1.2em;
+  vertical-align: super;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  body {
+    justify-content: flex-start;
+  }
+
+  h1 {
+    font-size: 8vw;
+  }
+
+  h3 {
+    font-size: 4vw;
+  }
+
+  .temperature-value {
+    font-size: 2.5em;
+  }
+
+  .weather-img {
+    width: 80px;
+    height: 60px;
+  }
+
+  .location {
+    font-size: 1.5em;
+  }
+
+  .weather-text, .deg {
+    font-size: 1em;
+  }
+
+  .box {
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  .weather-container {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+}
+
+.loader-box, .error-box {
+  margin-top: 20px;
+  font-size: 2.2em;
+  color: rgb(129, 13, 13);
+  font-family: "Amatic SC", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Acme&family=Amatic+SC:wght@400;700&family=Kalam:wght@300;400;700&family=LXGW+WenKai+Mono+TC&family=Luckiest+Guy&family=Pacifico&family=Playwrite+AU+VIC:wght@100..400&display=swap');
