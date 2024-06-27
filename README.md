@@ -11,7 +11,7 @@ The proxy server is used to handle CORS issues by forwarding requests to the Acc
 - [Running the App](#running-the-app)
 - [Project Structure](#project-structure)
 - [Dependencies](#dependencies)
-- [Screenshots](#screenshots)
+- [Screenrecording](#screenrecording-of-the-project)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -86,8 +86,8 @@ weather-app/<br>
 3. Express (for proxy server)
 4. Request (for proxy server)
 
-## Screenrecording
-`![click to watch](screenrec)`
+## Screenrecording of the project
+https://drive.google.com/file/d/1U4ZByXTgSnfzBNAijZBdWno6vkH2sz9I/view?usp=drive_link
 
 ### Explanation
 
