@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Weather App
 
 This Weather App is built using React and fetches real-time weather data from the AccuWeather API via a proxy server.
