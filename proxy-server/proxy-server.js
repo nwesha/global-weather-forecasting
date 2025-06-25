@@ -1,8 +1,8 @@
 const express = require('express');
 const request = require('request');
 const app = express();
-
-const API_KEY = '0NPAdyGBiowTx4fAvA0gEwk1MyCpozVK';
+require('dotenv').config();    
+ const API_KEY = process.env.ACCUWEATHER_API_KEY;
 
 app.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', '*');
