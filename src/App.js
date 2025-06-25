@@ -11,7 +11,11 @@ function App() {
   const fetchCity = (e) => {
     e.preventDefault();
     setError(null);
-    axios.get(`http://localhost:4000/api/locations/v1/cities/search?q=${citySearch}`)
+    // axios.get(`http://localhost:4000/api/locations/v1/cities/search?q=${citySearch}`)
+    axios.get(
+      `${process.env.REACT_APP_PROXY_URL}/api/locations/v1/cities/search`,
+      { params: { q: citySearch } }
+    )
       .then((response) => {
         if (response.data.length > 0) {
           setCitySearch('');

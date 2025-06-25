@@ -13,8 +13,8 @@ const FetchWeather = ({ cityData }) => {
 
       try {
         const locationKey = cityData.Key;
-        const response = await axios.get(`http://localhost:4000/api/currentconditions/${locationKey}`);
-        const weatherData = response.data[0]; // Assuming the first item in the array is sufficient
+        const response = await axios.get(`${process.env.REACT_APP_PROXY_URL}/api/currentconditions/v1/${locationKey}`);
+        const weatherData = response.data[0]; 
         setData(weatherData);
       } catch (error) {
         console.error('Error fetching weather data:', error);
