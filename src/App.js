@@ -11,7 +11,6 @@ function App() {
   const fetchCity = (e) => {
     e.preventDefault();
     setError(null);
-    // axios.get(`http://localhost:4000/api/locations/v1/cities/search?q=${citySearch}`)
     axios.get(
       `${process.env.REACT_APP_PROXY_URL}/api/locations/v1/cities/search`,
       { params: { q: citySearch } }
@@ -36,6 +35,7 @@ function App() {
     <div className="App">
       <div className="heading">
       <h1>CityWeather</h1>
+      <p><a href='https://portfolio-anwesha.vercel.app/' title="Visit Portfolio">Straight from Anwesha’s clouds :)</a></p>
       <h3>Explore weather worldwide!</h3>
       </div>
       <div className="form-container">
